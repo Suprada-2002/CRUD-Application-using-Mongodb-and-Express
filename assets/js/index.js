@@ -1,6 +1,5 @@
 $("#add_user").submit(function (event) {
   alert("Data Inserted Successfully!");
-  console.log(process);
 });
 
 $("#update_user").submit(function (event) {
@@ -13,7 +12,6 @@ $("#update_user").submit(function (event) {
     data[n["name"]] = n["value"];
   });
 
-  console.log(process);
   var request = {
     url: `https://crud-application-using-mongo.herokuapp.com/api/users/${data.id}`,
     method: "PUT",
@@ -30,7 +28,6 @@ if (window.location.pathname == "/") {
   $ondelete.click(function () {
     var id = $(this).attr("data-id");
 
-    console.log("clicked");
     var request = {
       url: `https://crud-application-using-mongo.herokuapp.com/api/users/${id}`,
       method: "DELETE",
